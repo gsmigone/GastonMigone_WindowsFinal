@@ -13,6 +13,7 @@ namespace GastonMigone_WindowsFinal
 {
     public partial class Form1 : Form
     {
+        //Defino variables
         string nombre = "";
         string apellido = "";
         string puesto = "";
@@ -24,6 +25,8 @@ namespace GastonMigone_WindowsFinal
             InitializeComponent();
         }
 
+
+        //Botón de Validación
         private void btnVal_Click(object sender, EventArgs e)
         {
             nombre = ValidarNombre(txtNom.Text);
@@ -43,9 +46,11 @@ namespace GastonMigone_WindowsFinal
         }
 
 
+        //Botón de Mostrar
         private void btnMos_Click(object sender, EventArgs e)
         {
 
+            //Verifico y Valido de ser necesario los valores en los campos si es que no validé anteriormente
             if (nombre.Length < 2 || nombre.Length > 50)
             {
                 nombre = ValidarNombre(txtNom.Text);
@@ -65,6 +70,7 @@ namespace GastonMigone_WindowsFinal
             }
         }
 
+        //Botón Horas
         private void btnHor_Click(object sender, EventArgs e)
         {
             double horas = 0;
@@ -112,6 +118,7 @@ namespace GastonMigone_WindowsFinal
 
         }
 
+        //Botón Limpiar
         private void btnLim_Click(object sender, EventArgs e)
         {
             txtApe.Clear();
@@ -122,6 +129,7 @@ namespace GastonMigone_WindowsFinal
             Imprimir("Se limpiaron los campos!!");
         }
 
+        //Validadores
         #region validadores
 
         private string ValidarNombre(string nomVal)
@@ -216,6 +224,8 @@ namespace GastonMigone_WindowsFinal
 
         #endregion
 
+
+        //Imprimir sobrecargado
         #region imprimir
 
         private void Imprimir(string texto)
